@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>منصة هويتي وقيمي</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Tahoma", "Arial", sans-serif;
+    }
+
+    body {
+      background: #f7f9fb;
+      color: #1f2933;
+      line-height: 1.8;
+    }
+
+    header {
+      background: linear-gradient(135deg, #7a0f18, #0b2545, #0f6b3f);
+      color: white;
+      padding: 40px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      left: -80px;
+      top: -80px;
+    }
+
+    .logo-box {
+      width: 110px;
+      height: 110px;
+      background: rgba(255,255,255,0.18);
+      border: 2px dashed rgba(255,255,255,0.7);
+      border-radius: 22px;
+      margin: 0 auto 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
+
+    header p {
+      font-size: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    nav {
+      background: white;
+      padding: 14px 20px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      text-align: center;
+    }
+
+    nav a {
+      color: #0b2545;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+      padding: 8px 12px;
+      border-radius: 10px;
+    }
+
+    nav a:hover {
+      background: #eef4f8;
+      color: #7a0f18;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: 35px auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      background: white;
+      margin-bottom: 28px;
+      padding: 30px;
+      border-radius: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      border-right: 7px solid #0f6b3f;
+    }
+
+    .section h2 {
+      color: #7a0f18;
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    .intro {
+      font-size: 19px;
+      color: #334155;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 22px;
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      color: #0b2545;
+      margin-bottom: 8px;
+      font-size: 21px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #0f6b3f;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .quote {
+      background: linear-gradient(135deg, #fff7ed, #fefce8);
+      border-right: 6px solid #d97706;
+      padding: 24px;
+      border-radius: 18px;
+      font-size: 20px;
+      color: #4b3415;
+      margin-top: 18px;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    label {
+      font-weight: bold;
+      color: #0b2545;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #cbd5e1;
+      border-radius: 14px;
+      font-size: 16px;
+      background: #fff;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    button {
+      background: linear-gradient(135deg, #7a0f18, #0b2545);
+      color: white;
+      border: none;
+      border-radius: 16px;
+      padding: 15px 22px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      width: fit-content;
+    }
+
+    button:hover {
+      opacity: 0.92;
+    }
+
+    footer {
+      background: #0b2545;
+      color: white;
+      text-align: center;
+      padding: 28px 18px;
+      margin-top: 40px;
+    }
+
+    .footer-small {
+      color: #cbd5e1;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .manager-message {
+      background: #eef7f1;
+      border-right: 6px solid #0f6b3f;
+      padding: 22px;
+      border-radius: 18px;
+      font-size: 19px;
+    }
+
+    @media (max-width: 700px) {
+      header h1 { font-size: 32px; }
+      header p { font-size: 17px; }
+      nav a { display: inline-block; margin: 5px; }
+      .section { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-box">ضع شعار المدرسة هنا</div>
+    <h1>منصة هويتي وقيمي</h1>
+    <p>منصة تربوية ثقافية لتعزيز الآداب، وترسيخ القيم، وتنمية الاعتزاز بالهوية الوطنية الإماراتية.</p>
+  </header>
+
+  <nav>
+    <a href="#about">عن المنصة</a>
+    <a href="#manners">آداب وسلوكيات</a>
+    <a href="#identity">هويتي الوطنية</a>
+    <a href="#story">قصة وقيمة</a>
+    <a href="#message">رسالة المديرة</a>
+    <a href="#participate">شاركنا رأيك</a>
+  </nav>
+
+  <main class="container">
+
+    <section id="about" class="section">
+      <h2>عن المنصة</h2>
+      <p class="intro">
+        مرحبًا بكم في منصة <strong>هويتي وقيمي</strong>، المنصة التربوية التي تهدف إلى بناء جيل يعتز بهويته الوطنية، ويتمسك بآدابه وقيمه، ويمارس السلوك الإيجابي في مدرسته ومجتمعه. نؤمن أن التربية ليست معرفة فقط، بل أخلاق، وانتماء، واحترام، ومسؤولية.
+      </p>
+      <div class="quote">
+        شعارنا: <strong>أدبٌ يميزنا… وهويةٌ تجمعنا</strong>
+      </div>
+    </section>
+
+    <section id="manners" class="section">
+      <h2>آداب وسلوكيات</h2>
+      <p>مساحة تربوية لتناول القيم والسلوكيات اليومية التي تعكس شخصية الطالب الإيجابية داخل المدرسة وخارجها.</p>
+      <div class="cards">
+        <div class="card">
+          <span class="badge">قيمة</span>
+          <h3>احترام الآخرين</h3>
+          <p>الاستماع الجيد، اختيار الألفاظ المناسبة، وتقدير اختلاف الآراء.</p>
+        </div>
+        <div class="card">
+          <span class="badge">سلوك</span>
+          <h3>أدب الحوار</h3>
+          <p>التحدث بهدوء، عدم المقاطعة، والرد بأسلوب راقٍ ومسؤول.</p>
+        </div>
+        <div class="card">
+          <span class="badge">مسؤولية</span>
+          <h3>المحافظة على الممتلكات</h3>
+          <p>حماية مرافق المدرسة وأدوات التعلم باعتبارها مسؤولية مشتركة.</p>
+        </div>
+        <div class="card">
+          <span class="badge">انضباط</span>
+          <h3>الالتزام والنظام</h3>
+          <p>احترام الوقت، اتباع التعليمات، والمشاركة الإيجابية في البيئة المدرسية.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="identity" class="section">
+      <h2>هويتي الوطنية</h2>
+      <p>قسم يعزز الانتماء الوطني والاعتزاز بثقافة دولة الإمارات العربية المتحدة وتراثها وقيمها الأصيلة.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>حب الوطن</h3>
+          <p>الولاء والانتماء والعمل بإخلاص من أجل رفعة دولة الإمارات.</p>
+        </div>
+        <div class="card">
+          <h3>احترام علم الدولة</h3>
+          <p>فهم رمزية العلم والتعامل معه باعتزاز واحترام في جميع المناسبات.</p>
+        </div>
+        <div class="card">
+          <h3>التراث الإماراتي</h3>
+          <p>التعرف إلى العادات والتقاليد والقيم التي تميز المجتمع الإماراتي.</p>
+        </div>
+        <div class="card">
+          <h3>الهوية والمسؤولية</h3>
+          <p>تمثيل الوطن بصورة مشرفة من خلال الأخلاق والسلوك والعمل.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="section">
+      <h2>قصة وقيمة</h2>
+      <p>
+        في كل أسبوع، يتم عرض قصة قصيرة أو موقف تربوي يعكس قيمة محددة، ثم يشارك الطلبة والمعلمون بتأملاتهم حول ما تعلموه منها.
+      </p>
+      <div class="quote">
+        مثال لهذا الأسبوع: طالب بادر بمساعدة زميله دون أن يُطلب منه ذلك، فكان مثالًا في التعاون والمسؤولية.  
+        <br><strong>سؤال للتأمل:</strong> كيف يمكن أن نطبق قيمة التعاون في يومنا المدرسي؟
+      </div>
+    </section>
+
+    <section id="message" class="section">
+      <h2>رسالة المديرة</h2>
+      <div class="manager-message">
+        أبنائي الطلبة، زملائي المعلمين والإداريين، إن بناء الإنسان يبدأ من القيم، ويكتمل بالانتماء والوعي والمسؤولية. هذه المنصة مساحة نلتقي فيها على معنى راقٍ: أن نكون أكثر أدبًا، وأكثر وعيًا، وأكثر اعتزازًا بهويتنا الوطنية.
+        <br><br>
+        <strong>د/ إيناس علي</strong><br>
+        مديرة مدرسة الشراكات التعليمية الافتراضية
+      </div>
+    </section>
+
+    <section id="participate" class="section">
+      <h2>شاركنا رأيك</h2>
+      <p>يمكن للطلبة والمعلمين والإداريين وأولياء الأمور مشاركة آرائهم ومواقفهم ومقترحاتهم حول القيم والهوية الوطنية.</p>
+
+      <form onsubmit="event.preventDefault(); alert('تم تسجيل مشاركتك بنجاح. يمكن ربط هذا النموذج لاحقًا ببريد إلكتروني أو Google Forms.');">
+        <div>
+          <label>الاسم</label>
+          <input type="text" placeholder="اكتب الاسم هنا" />
+        </div>
+        <div>
+          <label>الفئة</label>
+          <select>
+            <option>طالب/طالبة</option>
+            <option>معلم/معلمة</option>
+            <option>إداري/إدارية</option>
+            <option>ولي أمر</option>
+            <option>زائر/شريك</option>
+          </select>
+        </div>
+        <div>
+          <label>موضوع المشاركة</label>
+          <select>
+            <option>آداب وسلوكيات</option>
+            <option>الهوية الوطنية</option>
+            <option>قصة أو موقف إيجابي</option>
+            <option>اقتراح تطويري</option>
+            <option>رسالة شكر أو تقدير</option>
+          </select>
+        </div>
+        <div>
+          <label>نص المشاركة</label>
+          <textarea placeholder="اكتب رأيك أو مشاركتك هنا..."></textarea>
+        </div>
+        <button type="submit">إرسال المشاركة</button>
+      </form>
+    </section>
+
+    <section class="section">
+      <h2>بيانات التواصل</h2>
+      <p>
+        البريد الإلكتروني: <strong>ضع الإيميل الرسمي هنا</strong><br>
+        رقم التواصل: <strong>ضع رقم الهاتف أو الواتساب هنا</strong>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>منصة هويتي وقيمي | مدرسة الشراكات التعليمية الافتراضية</p>
+    <p class="footer-small">إعداد: د/ إيناس علي - مديرة المدرسة</p>
+  </footer>
+
+</body>
+</html>
